@@ -82,24 +82,23 @@ nav {
 .nav__icons {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
   position: relative;
 }
-
-
 
 .nav__input {
   background: none;
   width: 0;
-  border: 2px solid var(--secondary);
+  border: 2px solid transparent;
   border-radius: 99px;
   outline: none;
   padding: 12px 4px 12px 32px;
-  cursor: pointer;
+  font-size: 14px;
+  cursor: default;
   transition: 0.4s ease;
 }
 
-.nav__input:active, .nav__input:focus {
+.nav__input:focus {
   width: 240px;
   border-color: var(--secondary);
   cursor: text;
@@ -128,6 +127,7 @@ nav {
   font-weight: 300;
   text-align: center;
   margin-top: 10px;
+  padding: 0 16px;
 }
 
 .header__src {
@@ -289,6 +289,10 @@ nav {
     max-width: 72px;
   }
 
+  .nav__input:focus {
+    width: 200px;
+  }
+
   #src-results {
     margin: 80px 16px;
   }
@@ -316,8 +320,11 @@ nav {
   }
 
   .nav__logo,
-  .nav__src {
+  .nav__icon__search,
+  .nav__input {
     display: none;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .nav__link {
@@ -325,7 +332,7 @@ nav {
   }
 
   .header__title {
-    margin-top: 72px;
+    margin-top: 60px;
   }
 }
 
