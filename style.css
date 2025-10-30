@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+* {
+  color: var(--secondary);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+html {
+  --primary: #1e1e1e;
+  --secondary: #ffffff;
+  --accent: #dc143c;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background: var(--primary);
+}
+
+.colored-text {
+  color: var(--accent);
+  font-weight: 300;
+}
+
+/* Navigation bar / Header */
+
+header {
+  box-shadow: 0px 60px 50px 0px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__img {
+  filter: opacity(0.3);
+  position: absolute;
+  z-index: -1;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1480px;
+  margin: 10px auto 0;
+  padding: 0 80px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav__link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 200;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: 0.3s ease;
+}
+
+.nav__link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.nav__logo {
+  filter: invert(0.9);
+  width: 100%;
+  max-width: 80px;
+  margin-right: 16px;
+}
+
+.nav__icons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+
+
+.nav__input {
+  position: relative;
+  background: none;
+  width: 0;
+  border: 2px solid var(--secondary);
+  border-radius: 99px;
+  outline: none;
+  padding: 10px;
+  cursor: default;
+  transition: 0.4s ease;
+}
+
+.nav__input:active, .nav__input:focus {
+  width: 240px;
+  border-color: var(--secondary);
+  cursor: text;
+}
+
+.nav__icon__search {
+  position: absolute;
+  cursor: pointer;
+}
+
+.nav__icon__settings {
+  cursor: not-allowed;
+}
+
+/* Header */
+
+.header__title {
+  font-size: 64px;
+  font-weight: 200;
+  margin-top: 44px;
+}
+
+.header__para {
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.header__src {
+  position: relative;
+  margin: 40px 0 60px;
+}
+
+.header__src__input {
+  background: none;
+  font-size: 20px;
+  border: 2px solid var(--secondary);
+  border-radius: 99px;
+  outline: none;
+  padding: 24px 64px 24px 30px;
+  transition: 0.3s ease;
+}
+
+.header__src__input:focus {
+  box-shadow: 0 0 8px var(--accent);
+  scale: 1.02;
+}
+
+.header__src__icon {
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.header__src__icon:hover {
+  scale: 1.05;
+}
+
+/* src-results */
+
+#src-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 80px 40px;
+}
+
+.src-results__row {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 90%;
+}
+
+.src-results__title {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 32px;
+  font-weight: 200;
+}
+
+.src-results__name {
+  color: var(--accent);
+  text-shadow: 1px 1px 10px var(--accent), -1px -1px 10px var(--accent);
+  font-size: 24px;
+  font-weight: 300;
+  border-bottom: 1px solid var(--accent);
+  padding: 8px 0;
+}
+
+.src-results__movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.src-results__movie {
+  box-shadow: 0 8px 12px var(--shadow);
+  margin: 24px 8px;
+  border-radius: 8px;
+  max-width: 198px;
+  overflow: hidden;
+}
+
+.src-results__movie__content {
+  position: relative;
+}
+
+.src-results__movie__content__poster {
+  width: 100%;
+  max-height: 288px;
+  transition: 0.4s ease;
+}
+
+.src-results__movie__content:hover .src-results__movie__content__poster {
+  filter: blur(4px) opacity(0.5);
+  scale: 1.05;
+}
+
+.src-results__movie__content:hover .src-results__movie__content__info {
+  opacity: 1;
+}
+
+.src-results__movie__content__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 24px 16px;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.src-results__movie__content__info__title {
+  font-size: 20px;
+}
+
+.src-results__movie__content__info__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+
+.src-results__movie__content__info__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.src-results__movie__content__info__stats__para {
+  font-weight: 600;
+}
+
+.src-results__movie__subtitle {
+  font-size: 14px;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 16px;
+  padding: 8px;
+}
+
+@media screen and (max-width: 840px) {
+  .src-results__title {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0 40px;
+  }
+
+  .nav__logo {
+    max-width: 72px;
+  }
+
+  #src-results {
+    margin: 80px 16px;
+  }
+
+  .src-results__row {
+    width: 100%;
+  }
+
+  .src-results__movie {
+    max-width: 180px;
+  }
+
+  .src-results__movie__content__info__title {
+    font-size: 16px;
+  }
+
+  .src-results__movie__content__info__wrapper {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  nav {
+    padding: 24px 40px 0;
+  }
+
+  .nav__logo,
+  .nav__src {
+    display: none;
+  }
+
+  .nav__link {
+    font-size: 16px;
+  }
+
+  .header__title {
+    margin-top: 72px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header__title {
+    font-size: 40px;
+    margin-top: 88px;
+  }
+
+  .header__para {
+    font-size: 18px;
+  }
+
+  .header__src__input {
+    padding: 16px 30px;
+  }
+
+  .src-results__name {
+    font-size: 18px;
+  }
+
+  .src-results__movie {
+    max-width: 124px;
+  }
+
+  .src-results__movie__content__info__title {
+    font-size: 12px;
+  }
+
+  .src-results__movie__content__info__wrapper {
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .src-results__movie__content__info__stats__para,
+  .src-results__movie__content__info__stats__icon {
+    font-size: 12px;
+  }
+}
