@@ -83,19 +83,19 @@ nav {
   display: flex;
   align-items: center;
   gap: 32px;
+  position: relative;
 }
 
 
 
 .nav__input {
-  position: relative;
   background: none;
   width: 0;
   border: 2px solid var(--secondary);
   border-radius: 99px;
   outline: none;
-  padding: 10px;
-  cursor: default;
+  padding: 12px 4px 12px 32px;
+  cursor: pointer;
   transition: 0.4s ease;
 }
 
@@ -107,6 +107,7 @@ nav {
 
 .nav__icon__search {
   position: absolute;
+  left: 8px;
   cursor: pointer;
 }
 
