@@ -203,6 +203,21 @@ nav {
   justify-content: space-around;
 }
 
+.src-results__movies__spinner {
+  color: var(--accent);
+  font-size: 64px;
+  animation: spinning 1s infinite;
+}
+
+@keyframes spinning {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
 .src-results__movie {
   box-shadow: 0 8px 12px var(--shadow);
   margin: 24px 8px;
