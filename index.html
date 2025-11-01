@@ -29,8 +29,8 @@
           <a href="#" class="nav__link">Contact</a>
         </div>
         <div class="nav__icons">
-          <i class="fa-solid fa-magnifying-glass nav__icon__search"></i>
-          <input type="text" placeholder="Find a movie" class="nav__input" />
+          <i onclick="activateSearch()" class="fa-solid fa-magnifying-glass nav__icon__search"></i>
+          <input type="text" placeholder="Find a movie" onkeyup="setSearchParameterEnter(event)" class="nav__input" />
           <i class="fa-solid fa-gear nav__icon__settings"></i>
         </div>
       </nav>
@@ -46,9 +46,10 @@
         <input
           type="text"
           placeholder="Find a movie"
+          onkeyup="setSearchParameterEnter(event)"
           class="header__src__input"
         />
-        <i class="fa-solid fa-magnifying-glass header__src__icon"></i>
+        <i onclick="renderMovies()" class="fa-solid fa-magnifying-glass header__src__icon"></i>
       </div>
     </header>
 
@@ -58,185 +59,7 @@
           <h2 class="src-results__title">
             Search results for:<span class="src-results__name">"avengers"</span>
           </h2>
-          <div class="src-results__movies">
-            <figure class="src-results__movie">
-              <div class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name dwaddada dasd
-                  </h3>
-                  <class class="src-results__movie__content__info__wrapper">
-                    <div class="src-results__movie__content__info__stats">
-                      <i
-                        class="fa-solid fa-clock src-results__movie__content__info__stats__icon"
-                      ></i>
-                      <p class="src-results__movie__content__info__stats__para">
-                        136m
-                      </p>
-                    </div>
-                    <div class="src-results__movie__content__info__stats">
-                      <i
-                        class="fa-solid fa-star src-results__movie__content__info__stats__icon"
-                      ></i>
-                      <p class="src-results__movie__content__info__stats__para">
-                        4.5
-                      </p>
-                    </div>
-                    <div class="src-results__movie__content__info__stats">
-                      <i
-                        class="fa-solid fa-earth-americas src-results__movie__content__info__stats__icon"
-                      ></i>
-                      <p class="src-results__movie__content__info__stats__para">
-                        English
-                      </p>
-                    </div>
-                  </class>
-                </div>
-              </div>
-              <h4 class="src-results__movie__subtitle">
-                Movie name hduwdhwdhw
-              </h4>
-            </figure>
-            <div class="src-results__movie">
-              <figure class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name
-                  </h3>
-                  <div class="src-results__movie__content__info__length">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>136m</p>
-                  </div>
-                  <div class="src-results__movie__content__info__rating">
-                    <i class="fa-solid fa-star"></i>
-                    <p>4.5</p>
-                  </div>
-                  <div class="src-results__movie__content__info__language">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <p>English</p>
-                  </div>
-                </div>
-              </figure>
-              <h4 class="src-results__movie__subtitle">Movie name</h4>
-            </div>
-            <div class="src-results__movie">
-              <figure class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name
-                  </h3>
-                  <div class="src-results__movie__content__info__length">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>136m</p>
-                  </div>
-                  <div class="src-results__movie__content__info__rating">
-                    <i class="fa-solid fa-star"></i>
-                    <p>4.5</p>
-                  </div>
-                  <div class="src-results__movie__content__info__language">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <p>English</p>
-                  </div>
-                </div>
-              </figure>
-              <h4 class="src-results__movie__subtitle">Movie name</h4>
-            </div>
-            <div class="src-results__movie">
-              <figure class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name
-                  </h3>
-                  <div class="src-results__movie__content__info__length">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>136m</p>
-                  </div>
-                  <div class="src-results__movie__content__info__rating">
-                    <i class="fa-solid fa-star"></i>
-                    <p>4.5</p>
-                  </div>
-                  <div class="src-results__movie__content__info__language">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <p>English</p>
-                  </div>
-                </div>
-              </figure>
-              <h4 class="src-results__movie__subtitle">Movie name</h4>
-            </div>
-            <div class="src-results__movie">
-              <figure class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name
-                  </h3>
-                  <div class="src-results__movie__content__info__length">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>136m</p>
-                  </div>
-                  <div class="src-results__movie__content__info__rating">
-                    <i class="fa-solid fa-star"></i>
-                    <p>4.5</p>
-                  </div>
-                  <div class="src-results__movie__content__info__language">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <p>English</p>
-                  </div>
-                </div>
-              </figure>
-              <h4 class="src-results__movie__subtitle">Movie name</h4>
-            </div>
-            <div class="src-results__movie">
-              <figure class="src-results__movie__content">
-                <img
-                  src="Assets/movieposter.jpg"
-                  alt="movie name"
-                  class="src-results__movie__content__poster"
-                />
-                <div class="src-results__movie__content__info">
-                  <h3 class="src-results__movie__content__info__title">
-                    Movie name
-                  </h3>
-                  <div class="src-results__movie__content__info__length">
-                    <i class="fa-solid fa-clock"></i>
-                    <p>136m</p>
-                  </div>
-                  <div class="src-results__movie__content__info__rating">
-                    <i class="fa-solid fa-star"></i>
-                    <p>4.5</p>
-                  </div>
-                  <div class="src-results__movie__content__info__language">
-                    <i class="fa-solid fa-earth-americas"></i>
-                    <p>English</p>
-                  </div>
-                </div>
-              </figure>
-              <h4 class="src-results__movie__subtitle">Movie name</h4>
-            </div>
+          <div class="src-results__movies" id="movie-list">
           </div>
         </div>
       </section>
