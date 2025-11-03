@@ -31,7 +31,7 @@ async function fetchMovies(searchParameter) {
     }
 
     const response = await fetch(
-      `http://www.omdbapi.com/?apikey=caccfb1f&s=${searchParameter}`
+      `https://www.omdbapi.com/?apikey=caccfb1f&s=${searchParameter}`
     );
     const data = await response.json();
     const movies = data.Search.slice(0, 6);
