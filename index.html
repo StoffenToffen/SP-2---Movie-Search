@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TicketPlus</title>
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
     <script
@@ -49,7 +49,7 @@
           onkeyup="setSearchParameterEnter(event)"
           class="header__src__input"
         />
-        <i onclick="renderMovies()" class="fa-solid fa-magnifying-glass header__src__icon"></i>
+        <i onclick="setSearchParameterClick()" class="fa-solid fa-magnifying-glass header__src__icon"></i>
       </div>
     </header>
 
@@ -57,7 +57,7 @@
       <section id="src-results">
         <div class="src-results__row">
           <h2 class="src-results__title">
-            Search results for:<span class="src-results__name">"avengers"</span>
+            Search results for:<span class="src-results__name"></span>
           </h2>
           <div class="src-results__movies" id="movie-list">
           </div>

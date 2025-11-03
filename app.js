@@ -7,37 +7,38 @@ function setSearchParameterEnter(event) {
   if (event && event.key === "Enter") {
     if (document.querySelector(".nav__input") === document.activeElement) {
       searchParameter = document.querySelector(".nav__input").value;
-      fetchMovies(searchParameter)
+      fetchMovies(searchParameter);
     } else {
       searchParameter = document.querySelector(".header__src__input").value;
-      fetchMovies(searchParameter)
+      fetchMovies(searchParameter);
     }
   }
 }
 
 function setSearchParameterClick() {
-    // Continue on this, and also only show six movies, and fix loading wheel
-  let searchParameter = document.querySelector(".nav__input").value;
-  if (!searchParameter) {
-    searchParameter = document.querySelector(".header__src__input").value;
-  }
-  return searchParameter;
+  let searchParameter = document.querySelector(".header__src__input").value;
+  fetchMovies(searchParameter);
 }
 
 async function fetchMovies(searchParameter) {
-  if (!searchParameter) {
-    searchParameter = setSearchParameterClick();
-    if (!searchParameter) {
+  try {
+    if (!!searchParameter) {
+      document.querySelector(
+        ".src-results__name"
+      ).innerHTML = `"${searchParameter}"`;
+    } else {
       searchParameter = "avengers";
     }
-  }
 
-  const response = await fetch(
-    `http://www.omdbapi.com/?apikey=caccfb1f&s=${searchParameter}`
-  );
-  const data = await response.json();
-  const movies = data.Search;
-  renderMovies(movies)
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=caccfb1f&s=${searchParameter}`
+    );
+    const data = await response.json();
+    const movies = data.Search.slice(0, 6);
+    renderMovies(movies);
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function renderMovies(movies) {
