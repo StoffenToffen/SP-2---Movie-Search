@@ -38,6 +38,9 @@ async function fetchMovies(searchParameter) {
     renderMovies(movies);
   } catch (error) {
     console.log(error);
+    document.querySelector(
+      "#movie-list"
+    ).innerHTML = `<h3 class="src-results__movies__error">No results found</h3>`;
   }
 }
 
@@ -94,7 +97,7 @@ function renderMovies(movies) {
             </figure>`
     )
     .join("");
-  movieList.innerHTML = moviesHTML;
+  setTimeout(() => (movieList.innerHTML = moviesHTML), 500);
 }
 
 fetchMovies();

@@ -203,6 +203,11 @@ nav {
   justify-content: space-around;
 }
 
+.src-results__movies__error {
+  font-size: 32px;
+  font-weight: 200;
+}
+
 .src-results__movies__spinner {
   color: var(--accent);
   font-size: 64px;
